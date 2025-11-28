@@ -45,11 +45,11 @@ Purpose: Mobile-first professional esports look (Blue + Purple)
           <p>BGMI Scrims & Tournaments</p>
         </div>
       </div>
-      <nav class="nav" aria-label="Main navigation">
+<nav class="nav">
         <a class="ghost" href="#scrims">Scrims</a>
         <a class="ghost" href="#tournaments">Tournaments</a>
         <a class="ghost" href="#results">Results</a>
-        <a class="btn" href="#register">Register</a>
+        <a class="btn" href="register.html">Register</a>
       </nav>
       <div class="mobile-menu">
         <button class="btn" onclick="document.querySelector('#register').scrollIntoView({behavior:'smooth'})">Register</button>
@@ -61,10 +61,12 @@ Purpose: Mobile-first professional esports look (Blue + Purple)
         <h2>Professional BGMI Scrims & Tournaments</h2>
         <p class="small">Daily scrims • Competitive lobbies • Fair management • Blue–Purple pro esports look</p>
         <div class="cta-row">
-          <a class="btn" href="#register">REGISTER SCRIMS</a>
-          <a class="btn" href="https://whatsapp.com/channel/0029VaenpmaIyPtOptfvun3e" target="_blank">Join WhatsApp Channel</a>
-          
+<a class="btn" href="register.html">REGISTER SCRIMS</a>
+
+          <a class="btn" href="https://whatsapp.com/channel/0029VaenpmaIyPtOptfvun3e" target="_blank">Join WhatsApp</a>
         </div>
+      </div>
+    </section>
         <div class="cards">
           <div class="card">
             <h3>Daily Scrims</h3>
@@ -154,9 +156,8 @@ Purpose: Mobile-first professional esports look (Blue + Purple)
     </footer>
   </div>
 
-  <script>
-    document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click', function(e){e.preventDefault();const id=this.getAttribute('href').slice(1);if(!id)return;const el=document.getElementById(id);if(el) el.scrollIntoView({behavior:'smooth',block:'start'});});});
-    document.querySelector('.brand').addEventListener('click', ()=> window.scrollTo({top:0,behavior:'smooth'}));
+<<script>
+    console.log("GHV Esports Website Loaded Successfully");
   </script>
 </body>
 </html>
