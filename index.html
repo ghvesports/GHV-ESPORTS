@@ -1,8 +1,3 @@
-<!--
-GHV ESPORTS - Single-file static website (HTML/CSS/JS)
-Purpose: Mobile-first professional esports look (Blue + Purple)
--->
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -20,8 +15,9 @@ Purpose: Mobile-first professional esports look (Blue + Purple)
     header{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
     .brand{display:flex;align-items:center;gap:12px}
     .logo{width:56px;height:56px;border-radius:10px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--purple),var(--blue));box-shadow:0 6px 20px rgba(63,81,255,0.12);}
-    .logo svg{width:40px;height:40px} .brand h1{font-family:Orbitron, sans-serif;margin:0;font-size:16px;letter-spacing:1px} .brand p{margin:0;font-size:11px;color:var(--muted)}
-    .nav{display:flex;gap:10px;align-items:center} .btn{background:linear-gradient(90deg,var(--blue),var(--purple));padding:9px 14px;border-radius:10px;color:#fff;font-weight:600;font-size:14px;box-shadow:0 6px 18px rgba(196,88,220,0.08)}
+    .logo svg{width:50px;height:50px} .brand h1{font-family:Orbitron, sans-serif;margin:0;font-size:16px;letter-spacing:1px} .brand p{margin:0;font-size:11px;color:var(--muted)}
+    .nav{display:flex;gap:10px;align-items:center} .btn{background:linear-gradient(90deg,var(--blue),var(--purple));padding:9px 12px;border-radius:10px;color:#fff;font-weight:600;font-size:8px;box-shadow:0 6px 18px rgba(196,88,220,0.08)}.button-container a {margin-right: 10p;
+    }
     .ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:8px 12px;border-radius:10px;color:var(--muted);font-size:13px}
     .hero{display:grid;grid-template-columns:1fr;gap:18px;align-items:center;padding:20px 0} .hero-inner{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);border-radius:18px;padding:14px;display:flex;flex-direction:column;gap:12px}
     .hero h2{font-family:Orbitron;font-size:22px;margin:0} .hero p{margin:0;color:var(--muted)} .cta-row{display:flex;gap:10px;flex-wrap:wrap}
@@ -38,7 +34,9 @@ Purpose: Mobile-first professional esports look (Blue + Purple)
     <header>
       <div class="brand">
         <div class="logo" aria-hidden="true">
-  <img src="/mnt/data/IMG_20251124_211605_376.webp" alt="GHV Esports Logo" style="width:100%;height:100%;object-fit:cover;border-radius:10px;">
+  <img src="images/ghv_logo_512.png"
+     style="width:100%;height:auto;object-fit:contain;border-radius:10px;">
+
 </div>
         <div>
           <h1>GHV ESPORTS</h1>
@@ -46,13 +44,21 @@ Purpose: Mobile-first professional esports look (Blue + Purple)
         </div>
       </div>
 <nav class="nav">
-        <a class="ghost" href="#scrims">Scrims</a>
-        <a class="ghost" href="#tournaments">Tournaments</a>
-        <a class="ghost" href="#results">Results</a>
-        <a class="btn" href="register.html">Register</a>
+        <a class="ghost" href="login.html">Login</a>
+        <a class="ghost" href="signup.html">Sign Up</a>
+        <a class="ghost" href="dashboard.html">Dashboard</a>
+        <a class="ghost" href="tournament.html">Tournament</a>
       </nav>
+      
       <div class="mobile-menu">
-        <button class="btn" onclick="document.querySelector('#register').scrollIntoView({behavior:'smooth'})">Register</button>
+        <button class="btn" id="loginBtn" onclick="goLogin()">Login</button>
+<button class="btn" id="signupBtn" onclick="goSignup()">Sign Up</button>
+<button class="btn" id="dashboardBtn" onclick="goDashboard()" style="display:none;">
+    Dashboard
+</button>
+        <a href="signup.html" class="btn">Sign Up</a>
+        <a class="btn" href="tournament.html">Tournament</a>
+
       </div>
     </header>
 
@@ -61,7 +67,7 @@ Purpose: Mobile-first professional esports look (Blue + Purple)
         <h2>Professional BGMI Scrims & Tournaments</h2>
         <p class="small">Daily scrims • Competitive lobbies • Fair management • Blue–Purple pro esports look</p>
         <div class="cta-row">
-<a class="btn" href="register.html">REGISTER SCRIMS</a>
+<a class="btn" href="registerscrims.html">REGISTER SCRIMS</a>
 
           <a class="btn" href="https://whatsapp.com/channel/0029VaenpmaIyPtOptfvun3e" target="_blank">Join WhatsApp</a>
         </div>
@@ -84,7 +90,7 @@ Purpose: Mobile-first professional esports look (Blue + Purple)
       </div>
       <aside style="padding-left:10px;">
         <div class="card neon" style="padding:16px;">Scrims Info
-          <div style="margin-top:10px; font-size:13px; color:var(--muted)">
+          <div style="margin-top:18px; font-size:13px; color:var(--muted)">
             <div>Registration Start: <strong>9 AM</strong></div>
             <div>Registration End: <strong>6 PM</strong></div>
             <div>Match Timing: <strong>7 PM</strong></div>
@@ -116,13 +122,9 @@ Purpose: Mobile-first professional esports look (Blue + Purple)
     <section id="results">
       <div class="section-title">
         <h3>Results</h3>
-        <div class="small">Check scrims result & join WhatsApp group</div>
+        <div class="small">Check scrims result join WhatsApp group</div>
       </div>
-      <div class="gallery" style="margin-top:10px">
-        <img class="result-img" src="https://via.placeholder.com/800x450.png?text=Day+1+Results" alt="Day 1 Results">
-        <img class="result-img" src="https://via.placeholder.com/800x450.png?text=Day+2+Results" alt="Day 2 Results">
-        <img class="result-img" src="https://via.placeholder.com/800x450.png?text=Leaderboard" alt="Leaderboard">
-      </div>
+      
     </section>
 
     <section id="contact">
@@ -155,9 +157,51 @@ Purpose: Mobile-first professional esports look (Blue + Purple)
       </div>
     </footer>
   </div>
+<script>
+const loginStatus = localStorage.getItem("loggedIn");
 
-<<script>
+// If logged in → hide login/register, but DO NOT redirect
+if(loginStatus === "true"){
+    document.querySelectorAll('.ghost').forEach(btn => {
+        if(btn.href && (btn.href.includes("login") || btn.href.includes("register"))){
+            btn.style.display = "none";
+        }
+    });
+}
+</script>
+
+
+<script>
+    console.log("GHV Esports Website Loaded Successfully");
+</script>
+</body>
+</html>
+
+<script>
     console.log("GHV Esports Website Loaded Successfully");
   </script>
+    <script>
+function goLogin(){
+    window.location.href = "login.html";
+}
+
+function goSignup(){ window.location.href = "signup.html"; }
+
+function goDashboard(){
+    window.location.href = "dashboard.html";
+}
+
+// -------- Show/Hide Login Register Buttons --------
+if(localStorage.getItem("loggedIn") === "true"){
+    document.getElementById("loginBtn").style.display = "none";
+    document.getElementById("registerBtn").style.display = "none";
+    document.getElementById("dashboardBtn").style.display = "block";
+} else {
+    document.getElementById("loginBtn").style.display = "block";
+    document.getElementById("registerBtn").style.display = "block";
+    document.getElementById("dashboardBtn").style.display = "none";
+}
+</script>
+
 </body>
 </html>
